@@ -3,16 +3,26 @@ project:
   output-dir: docs
 
 website:
-  title: "natehurst.github.io"
+  title: "Nathaniel Hurst"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
-
+      - CV.qmd
+    tools: 
+      - icon: github
+        href: https://github.com/NateHurst
+      - icon: linkedin
+        href: https://www.linkedin.com/in/nathaniel-hurst-a6b106245/
+      - icon: envelope
+        href: mailto:nhurst0003@gmail.com
+      
 format:
   html:
-    theme: cosmo
+    theme: cobalt
+    fontcolor: "#FFFFFF"
+    fontsize: 1.4rem
     css: styles.css
     toc: true
 

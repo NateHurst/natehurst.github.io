@@ -1,11 +1,37 @@
 ---
-title: "natehurst.github.io"
+title: "Nathaniel Hurst"
+image: Headshot.jpeg
+resources: resume.pdf
+about:
+  template: jolla
+  image-shape: round
+  image-width: 15em
+
+  links:
+    # Header 1
+    - text: __Email__
+      icon: envelope
+      href: mailto:nhurst0003@gmail.com
+    - text: __GitHub__
+      icon: github
+      href: https://github.com/NateHurst
+    - text: __Resume__
+      icon: file-text
+      href: resume.pdf
+    - text: __LinkedIn__
+      icon: linkedin
+      href: https://www.linkedin.com/in/nathaniel-hurst-a6b106245/
+      
 ---
 
-This is a Quarto website.
+<style>
+  
+  body {
+  background-image: url("https://wallpapercat.com/w/full/4/c/2/17001-3840x2160-desktop-4k-mountain-wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+</style>
 
-```{r}
-1 + 1
-```
+__Economics and Math Undergraduate at UC Santa Barbara__
