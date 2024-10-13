@@ -20,8 +20,10 @@ website:
       
 format:
   html:
-    theme: cobalt
-    fontcolor: "#FFFFFF"
+    theme:
+      light: cobalt
+      dark: cobalt    
+    fontcolor: "#FEFEFE"
     fontsize: 1.4rem
     css: styles.css
     toc: true
