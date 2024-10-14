@@ -1,6 +1,6 @@
 ---
 title: "Nathaniel Hurst"
-image: Headshot.jpeg
+image: Headshot.jpg
 resources: resume.pdf
 about:
   template: jolla
