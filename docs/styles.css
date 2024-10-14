@@ -1,1 +1,14 @@
-/* css styles */
+/* styles.css */
+
+/* Set body font color and font size */
+body {
+  color: #FEFEFE !important;   /* Ensure text color is white */
+  font-size: 1rem !important; /* Set the default font size */
+}
+
+/* Add any additional custom styles here */
+
+/* Override cobalt theme headings (optional) */
+h1, h2, h3, h4, h5, h6 {
+  color: #FEFEFE !important; /* Ensure headings follow the same color */
+}
