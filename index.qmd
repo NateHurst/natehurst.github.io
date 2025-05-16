@@ -20,7 +20,7 @@ about:
       href: resume.pdf
     - text: __LinkedIn__
       icon: linkedin
-      href: https://www.linkedin.com/in/nathaniel-hurst-a6b106245/
+      href: aa
       
 ---
 
@@ -34,4 +34,4 @@ about:
 
 </style>
 
-__Economics and Math Undergraduate at UC Santa Barbara__
+In Progress
