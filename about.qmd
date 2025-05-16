@@ -11,8 +11,4 @@ title: "About Me"
 
 </style>
 
-Hello! I'm currently a second year student at [UC Santa Barbara](https://www.ucsb.edu) where I am pursuing a double major in Economics and Mathematics. My passions for understanding Economic motivations and the underlying decisions made in Economic situations is what drives me. Some things I am particularly interested in are Economic theory, Mathematical and Statistical modeling, and inference.
-
-During my time at UCSB I hope to engage in research related to economic motivations and irrational behavior in order to prepare for a PhD in Economics. Overall I hope to make meaningful contributions to the field of Economics.
-
-In addition to my academic aspirations I enjoy engaging with my peers through clubs and on-campus events. I am currently participating in several consulting and economic focused clubs, from TAMID to the Economics association. Outside of my academics you can find me rock climbing or biking. I look forward to learning more and connecting with others who share my passion for Mathematics and Economics.
+In Progress
