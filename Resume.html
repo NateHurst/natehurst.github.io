@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - Your Name</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #F5EFE6;
+    }
+    .pdf-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F5EFE6;
+    }
+    .pdf-frame {
+      width: 90vw;
+      height: 95vh;
+      border: none;
+      box-shadow: 0 4px 16px rgba(75,85,99,0.06);
+      background: #fff;
+    }
+    .back-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #4B5563;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 10;
+    }
+    .back-link:hover {
+      background: #6A8D92;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">← Back to Home</a>
+  <div class="pdf-container">
+    <iframe
+      class="pdf-frame"
+      src="Resume.pdf"
+      title="Resume"
+    ></iframe>
+  </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | College Student</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #c3e0f7 100%);
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #4B5563 0%, #6A8D92 100%);
+      color: #F9F7F1;
+      padding: 30px 0 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0;
+      margin: 20px 0 0 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 30px 40px;
+    }
+    h1, h2 {
+      color: #2d3a4b;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .profile-img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #2d3a4b;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #2d3a4b;
+      color: #fff;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 20px 10px; }
+      nav ul { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="headshot.jpg" alt="Nathaniel Hurst" class="profile-img">
+    <h1 style="color: white;">Nathaniel Hurst</h1>
+    <p>Undergraduate Student, UC Santa Barbara</p>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm Nathaniel Hurst, an undergraduate student at UC Santa Barbara majoring in Mathematics. I am passionate about Algebraic Geometry, Mathematical Cryptography, and Algebraic Number Theory. I enjoy learning new things, collaborating on projects, and contributing to campus life.
+      </p>
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>UC Santa Barbara</strong> — B.Sc. in Mathematics<br>
+          <em>Expected Graduation: 2027, GPA: 3.94/4.0</em>
+          <p>Selected Coursework So Far: Abstract Algebra (111A), Real Analysis (118A), Linear Algebra (108A/B), Complex Analysis (122A), Topology (145A)</p>
+        </li>
+        <!-- Add more education if needed -->
+      </ul>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>Directed Reading Program 2025</strong>: Studied Algebraic Geometry under the mentorship of a professor. Focused on the Quillen-Suslin Theorem, studying the relationship between algebraic vector bundles over affine space and finitely generated projective modules. Produced and presented this <a href="Quillen-Suslin-Expository.html" target="_blank">paper</a> and this <a href="DRPposter.html" target="_blank">poster</a>.
+        </li>
+        <li>
+          <strong>Undergraduate Research (Econ)</strong>: Researched the interactions between misinformation and protocols, including Twitter Community Notes. Managed databases including information from 1M+ tweets. Developed skills in data visualization and research presentation. You can find the github repo here: link
+        </li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: nhurst at ucsb dot edu</a></p>
+      <p>GitHub: <a href="https://github.com/NateHurst" target="_blank">NateHurst</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/nathaniel-hurst-a6b106245/" target="_blank">nathaniel-hurst</a></p>
+      <p>Resume: <a href="Resume.html" target="_blank">My Resume</a></p>
+    </section>
+  </main>
+</body>
+</html>
