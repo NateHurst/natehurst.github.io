@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAWS 2025 Solutions &mdash; Nathaniel Hurst</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #222;
+      --muted: #555;
+      --border: #ccc;
+      --link: #333;
+    }
+    [data-theme="dark"] {
+      --text: #e8e8e8;
+      --muted: #999;
+      --border: #333;
+      --link: #ccc;
+    }
+
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease;
+    }
+    .bg-light {
+      background-color: #f6efe3;
+      background-image: url('backgrounds/bg-nature.svg');
+      background-size: 500px 500px;
+      opacity: 1;
+    }
+    .bg-dark {
+      background-color: #060d1a;
+      background-image: url('backgrounds/bg-space.svg');
+      background-size: 600px 600px;
+      opacity: 0;
+    }
+    [data-theme="dark"] .bg-light { opacity: 0; }
+    [data-theme="dark"] .bg-dark  { opacity: 1; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: transparent;
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+      transition: color 0.4s ease;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .back-link {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.4s ease;
+    }
+    .back-link:hover { color: var(--text); text-decoration: underline; }
+
+    .toggle-btn {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color 0.4s ease, border-color 0.4s ease;
+    }
+    .toggle-btn:hover { color: var(--text); border-color: var(--muted); }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: normal;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--muted); font-size: 0.95rem; }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .week-list {
+      list-style: none;
+    }
+
+    .week-list li {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .week-list a {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      text-decoration: none;
+      color: var(--link);
+      font-size: 0.95rem;
+      transition: color 0.4s ease;
+    }
+
+    .week-list a:hover { color: var(--text); }
+    .week-list a:hover .arrow { opacity: 1; }
+
+    .week-label { font-weight: bold; margin-right: 0.75rem; }
+    .week-topic { color: var(--muted); flex: 1; transition: color 0.4s ease; }
+    .arrow { color: var(--muted); opacity: 0.4; font-size: 0.85rem; transition: opacity 0.15s, color 0.4s ease; }
+  </style>
+</head>
+<body>
+  <div class="bg-layer bg-light"></div>
+  <div class="bg-layer bg-dark"></div>
+  <div class="top-bar">
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
+    <button class="toggle-btn" onclick="toggleTheme()">Toggle dark mode</button>
+  </div>
+
+  <h1>PAWS 2025 &mdash; Introduction to Mathematical Cryptography</h1>
+  <p class="subtitle">Preliminary Arizona Winter School &middot; Instructor: Sabrina Kunzweiler</p>
+
+  <p>My solutions to the six problem sets from the PAWS 2025 course on mathematical cryptography.</p>
+
+  <h2>Problem Sets</h2>
+  <ul class="week-list">
+    <li><a href="showcases/paws0.html"><span class="week-label">Week 0</span><span class="week-topic">Introduction &amp; Background</span><span class="arrow">&#x2197;</span></a></li>
+    <li><a href="showcases/paws1.html"><span class="week-label">Week 1</span><span class="week-topic">Diffie&ndash;Hellman Key Exchange</span><span class="arrow">&#x2197;</span></a></li>
+    <li><a href="showcases/paws2.html"><span class="week-label">Week 2</span><span class="week-topic">Discrete Logarithm Problem</span><span class="arrow">&#x2197;</span></a></li>
+    <li><a href="showcases/paws3.html"><span class="week-label">Week 3</span><span class="week-topic">Elliptic Curves</span><span class="arrow">&#x2197;</span></a></li>
+    <li><a href="showcases/paws4.html"><span class="week-label">Week 4</span><span class="week-topic">Elliptic Curve Cryptography</span><span class="arrow">&#x2197;</span></a></li>
+    <li><a href="showcases/paws5.html"><span class="week-label">Week 5</span><span class="week-topic">Quantum-Resistant Cryptography</span><span class="arrow">&#x2197;</span></a></li>
+  </ul>
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+  </script>
+</body>
+</html>

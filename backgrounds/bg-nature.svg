@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <defs>
+    <path id="lf"  d="M0,-12 C4,-6 4,6 0,12 C-4,6 -4,-6 0,-12Z"/>
+    <path id="lfs" d="M0,-8  C3,-4 3,4 0,8  C-3,4 -3,-4 0,-8Z"/>
+  </defs>
+  <g fill="rgb(100,130,78)" opacity="0.11">
+    <!-- Cluster 1: top-left -->
+    <use href="#lf"  transform="translate(75,100)  rotate(-45)"/>
+    <use href="#lf"  transform="translate(90,112)  rotate(-15)"/>
+    <use href="#lfs" transform="translate(68,118)  rotate(-70)"/>
+    <!-- Cluster 2: top-center -->
+    <use href="#lf"  transform="translate(248,58)  rotate(20)"/>
+    <use href="#lfs" transform="translate(262,70)  rotate(50)"/>
+    <use href="#lfs" transform="translate(240,75)  rotate(-10)"/>
+    <!-- Cluster 3: top-right -->
+    <use href="#lf"  transform="translate(418,88)  rotate(35)"/>
+    <use href="#lf"  transform="translate(432,102) rotate(65)"/>
+    <use href="#lfs" transform="translate(410,105) rotate(10)"/>
+    <!-- Cluster 4: mid-left -->
+    <use href="#lf"  transform="translate(58,258)  rotate(-20)"/>
+    <use href="#lf"  transform="translate(72,272)  rotate(15)"/>
+    <use href="#lfs" transform="translate(52,278)  rotate(-50)"/>
+    <!-- Cluster 5: mid-right -->
+    <use href="#lf"  transform="translate(438,288) rotate(40)"/>
+    <use href="#lf"  transform="translate(452,300) rotate(70)"/>
+    <use href="#lfs" transform="translate(432,308) rotate(15)"/>
+    <!-- Cluster 6: bottom-left -->
+    <use href="#lf"  transform="translate(88,418)  rotate(-30)"/>
+    <use href="#lf"  transform="translate(102,432) rotate(5)"/>
+    <use href="#lfs" transform="translate(82,438)  rotate(-60)"/>
+    <!-- Cluster 7: bottom-center -->
+    <use href="#lf"  transform="translate(278,458) rotate(25)"/>
+    <use href="#lf"  transform="translate(292,470) rotate(55)"/>
+    <use href="#lfs" transform="translate(272,475) rotate(-5)"/>
+    <!-- Cluster 8: bottom-right -->
+    <use href="#lf"  transform="translate(428,428) rotate(45)"/>
+    <use href="#lf"  transform="translate(442,442) rotate(75)"/>
+    <use href="#lfs" transform="translate(422,448) rotate(20)"/>
+    <!-- Scattered singles -->
+    <use href="#lf"  transform="translate(162,182) rotate(30)"/>
+    <use href="#lfs" transform="translate(322,202) rotate(-25)"/>
+    <use href="#lfs" transform="translate(152,372) rotate(60)"/>
+    <use href="#lf"  transform="translate(362,342) rotate(-40)"/>
+    <use href="#lfs" transform="translate(202,302) rotate(15)"/>
+    <use href="#lf"  transform="translate(482,182) rotate(-35)"/>
+  </g>
+</svg>
