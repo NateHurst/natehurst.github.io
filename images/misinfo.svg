@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Main speech bubble (tweet/post) -->
+  <rect x="8" y="10" width="62" height="44" rx="7" ry="7" fill="#e0e0e0" stroke="#999" stroke-width="1.5"/>
+  <polygon points="22,54 12,68 34,54" fill="#e0e0e0" stroke="#999" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Lines suggesting text in bubble -->
+  <line x1="17" y1="24" x2="60" y2="24" stroke="#aaa" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="17" y1="33" x2="60" y2="33" stroke="#aaa" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="17" y1="42" x2="44" y2="42" stroke="#aaa" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Community notes annotation bubble -->
+  <rect x="38" y="46" width="54" height="36" rx="6" ry="6" fill="#fff9c4" stroke="#bba800" stroke-width="1.5"/>
+  <!-- Note icon lines -->
+  <line x1="47" y1="57" x2="82" y2="57" stroke="#bba800" stroke-width="2" stroke-linecap="round"/>
+  <line x1="47" y1="65" x2="82" y2="65" stroke="#bba800" stroke-width="2" stroke-linecap="round"/>
+  <line x1="47" y1="73" x2="68" y2="73" stroke="#bba800" stroke-width="2" stroke-linecap="round"/>
+</svg>

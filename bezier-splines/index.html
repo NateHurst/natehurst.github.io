@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bézier &amp; Spline Explorer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ── Header ────────────────────────────────────────────────────────────── -->
+  <header id="header">
+    <a href="../index.html" id="back-link" title="Back to natehurst.github.io">← Back</a>
+    <div id="logo">
+      <span class="logo-sym">∫</span>
+      <span class="logo-txt">Bézier Explorer</span>
+    </div>
+
+    <!-- Mode -->
+    <div class="grp">
+      <button class="btn active" id="btn-free">Free Draw</button>
+      <button class="btn"        id="btn-math">Math Mode</button>
+    </div>
+
+    <!-- Curve type -->
+    <div class="grp">
+      <button class="btn active" id="btn-bezier">Bézier</button>
+      <button class="btn"        id="btn-spline">Spline</button>
+    </div>
+
+    <!-- New Curve -->
+    <button class="btn-solo" id="btn-new-curve" title="Start a new independent curve (N)">+ New Curve</button>
+
+    <!-- 3D -->
+    <button class="btn-solo" id="btn-3d" title="Toggle 3D mode">3D</button>
+
+    <!-- Undo / Redo -->
+    <div class="grp">
+      <button class="btn" id="btn-undo" title="Undo (Ctrl+Z)" disabled>↩ Undo</button>
+      <button class="btn" id="btn-redo" title="Redo (Ctrl+Y)" disabled>↪ Redo</button>
+    </div>
+
+    <!-- Font designer -->
+    <button class="btn-solo" id="btn-font" title="Custom font designer (F)">&#9998; Font</button>
+
+    <!-- Examples -->
+    <div class="grp" id="examples-grp">
+      <button class="btn" id="ex-racetrack" title="Top-down oval racetrack with animated car">&#127955; Track</button>
+      <button class="btn" id="ex-figure8"   title="Figure-8 / lemniscate shape">&#8734; Fig-8</button>
+      <button class="btn" id="ex-heart"     title="Parametric heart curve">&#9829; Heart</button>
+      <button class="btn" id="ex-wave"      title="Sine-wave roller-coaster path">&#12316; Wave</button>
+    </div>
+
+    <!-- Theme -->
+    <button class="btn-solo" id="btn-theme" title="Toggle light/dark mode">☀ Light</button>
+
+    <div id="kbd-help">
+      <kbd>n</kbd> new curve &nbsp;
+      <kbd>m</kbd> mode &nbsp;
+      <kbd>b</kbd>/<kbd>s</kbd> type &nbsp;
+      <kbd>space</kbd> animate &nbsp;
+      <kbd>c</kbd> clear
+    </div>
+  </header>
+
+  <!-- ── Main ──────────────────────────────────────────────────────────────── -->
+  <div id="main">
+
+    <!-- Canvas -->
+    <div id="canvas-container">
+      <canvas id="canvas"></canvas>
+      <div id="canvas-hint">Click to add control points</div>
+    </div>
+
+    <!-- Font panel (overlay over main area) -->
+    <aside id="font-panel">
+      <div id="font-sidebar">
+
+        <div class="font-sidebar-header">
+          <span class="font-title">&#9998; Font Designer</span>
+          <button id="font-close-btn" title="Close font designer">&#10005;</button>
+        </div>
+
+        <div class="font-current-section">
+          <div id="font-current-display">A</div>
+          <div class="font-current-info">
+            <div class="font-current-label">Editing</div>
+            <div id="font-current-name">Letter A</div>
+          </div>
+        </div>
+
+        <div class="font-tools-row">
+          <button class="font-tool-btn font-tool-accent" id="font-add-stroke">+ Stroke</button>
+          <button class="font-tool-btn font-tool-danger" id="font-clear-letter">&#10005; Clear</button>
+          <button class="font-tool-btn" id="font-reset-arial">&#8635; Arial</button>
+        </div>
+
+        <div class="font-section-header">Letters</div>
+        <div id="font-letter-grid"></div>
+
+        <div class="font-preview-section">
+          <div class="font-section-header font-section-header-inner">Preview</div>
+          <div class="font-preview-input-row">
+            <input type="text" id="font-preview-input" placeholder="Type to preview…" value="Hello" maxlength="200">
+            <button class="font-tool-btn" id="font-expand-btn" title="Fullscreen preview">⛶</button>
+          </div>
+          <canvas id="font-preview-canvas" width="256" height="72"></canvas>
+          <p class="font-tip">Draw on canvas &middot; drag to reshape &middot; right-click to delete.<br>
+          Use <strong>+ Stroke</strong> for multi-part letters (B, i, j&hellip;).</p>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- Math sidebar -->
+    <aside id="math-panel">
+      <div class="panel-sec">
+        <h3>Parameter t</h3>
+        <div class="t-num"><span>t =&thinsp;</span><span id="t-value">0.500</span></div>
+        <input type="range" id="t-slider" min="0" max="1" step="0.001" value="0.5">
+        <button class="btn-solo" id="animate-btn">▶ Animate</button>
+        <div id="speed-group">
+          <span class="speed-label">Speed:</span>
+          <div class="grp speed-grp">
+            <button class="btn speed-btn" data-speed="0.25">0.25×</button>
+            <button class="btn speed-btn" data-speed="0.5">0.5×</button>
+            <button class="btn speed-btn active" data-speed="1">1×</button>
+            <button class="btn speed-btn" data-speed="1.5">1.5×</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-sec">
+        <h3>Formula</h3>
+        <div id="formula-display"><span class="muted">Add points to see the formula.</span></div>
+      </div>
+
+      <div class="panel-sec">
+        <h3>Bernstein Basis B<sub>n,i</sub>(t)</h3>
+        <div id="basis-charts"></div>
+      </div>
+
+      <div class="panel-sec">
+        <h3>Point on Curve</h3>
+        <div id="point-info"></div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ── Toolbar ────────────────────────────────────────────────────────────── -->
+  <footer id="toolbar">
+
+    <div class="tbar-group">
+      <button class="btn-solo btn-danger" id="clear-btn">Clear</button>
+    </div>
+
+    <div class="tbar-sep"></div>
+
+    <!-- Degree (Bezier only) -->
+    <div class="tbar-group" id="degree-group">
+      <span class="tbar-label">Degree:</span>
+      <div class="grp">
+        <button class="btn"        id="btn-quad">Quadratic</button>
+        <button class="btn active" id="btn-cubic">Cubic</button>
+        <button class="btn"        id="btn-free-deg">Free</button>
+      </div>
+    </div>
+
+    <div class="tbar-sep"></div>
+
+    <!-- Z slider (3D mode, shown when a point is selected) -->
+    <div class="tbar-group" id="z-slider-wrap" style="display:none">
+      <span class="tbar-label">Z:</span>
+      <input type="range" id="z-slider" min="-300" max="300" step="1" value="0" style="width:120px">
+      <span class="tbar-label accent" id="z-value">0</span>
+    </div>
+
+    <!-- Drag plane constraint (3D mode) -->
+    <div class="tbar-group" id="drag-plane-group" style="display:none">
+      <span class="tbar-label">Move on:</span>
+      <div class="grp">
+        <button class="btn active" id="dp-screen" title="Drag in camera-facing plane (full 3D)">Screen</button>
+        <button class="btn"        id="dp-xy"     title="Constrain to XY plane (Z locked)">XY</button>
+        <button class="btn"        id="dp-xz"     title="Constrain to XZ plane (Y locked)">XZ</button>
+        <button class="btn"        id="dp-yz"     title="Constrain to YZ plane (X locked)">YZ</button>
+      </div>
+    </div>
+
+    <!-- Camera hint (3D mode) -->
+    <div class="tbar-group" id="cam-hint" style="display:none">
+      <span class="tbar-label muted">Drag&nbsp;bg&nbsp;·&nbsp;scroll&nbsp;zoom&nbsp;·&nbsp;select&nbsp;pt→Z</span>
+    </div>
+
+    <div class="tbar-sep" id="z-sep" style="display:none"></div>
+
+    <!-- Animate marker -->
+    <div class="tbar-group">
+      <label class="toggle"><input type="checkbox" id="show-marker"><span>Animate</span></label>
+    </div>
+
+    <div class="tbar-sep"></div>
+
+    <!-- Display options -->
+    <div class="tbar-group">
+      <label class="toggle"><input type="checkbox" id="show-polygon" checked><span>Polygon</span></label>
+      <label class="toggle"><input type="checkbox" id="show-labels"  checked><span>Labels</span></label>
+      <label class="toggle"><input type="checkbox" id="show-tangent"       ><span>Tangent</span></label>
+    </div>
+
+  </footer>
+
+</div>
+
+<!-- ── Font big-preview overlay ────────────────────────────────────────────── -->
+<div id="font-big-preview" style="display:none">
+  <div id="font-big-preview-inner">
+    <div id="font-big-preview-toolbar">
+      <input type="text" id="font-big-preview-input" placeholder="Type here…" maxlength="200">
+      <button id="font-big-preview-close" title="Close (Esc)">&#10005;</button>
+    </div>
+    <canvas id="font-big-preview-canvas"></canvas>
+  </div>
+</div>
+
+<script src="js/math.js"></script>
+<script src="js/render.js"></script>
+<script src="js/font.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
